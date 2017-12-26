@@ -1,0 +1,12 @@
+<h1><%= @email.title %></h1>
+<p>
+    Created by: <%= @email.user.email %>
+</p>
+<div>
+    <%= sanitize @email.body %>
+</div>
+<div>
+    <%= link_to "Edit", edit_email_path, class:"blue" %> |
+    <%= link_to "Delete", @email, class:"red", method: :delete %> |
+    <%= link_to "Back", emails_path %>
+</div>

@@ -1,0 +1,20 @@
+<% name ||= "Create" %> 
+<h1> <%= name %> Email</h1>
+<%= form_for(@email) do |f| %>
+    <% @email.errors.full_messages.each do |message| %>
+        <div class="be-red white top-space">
+            * <%= message %>
+        </div>
+    <%end%>
+    <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class:"form-control" %>
+    </div>
+    <div>
+        <%= f.hidden_field :body, placeholder: "Write the message here", style:" height:250px;", class:"form-control", id: :post_body %>
+        <trix-editor input="post_body"></trix-editor>
+        
+    </div>
+    <div>
+        <%= f.submit "Save", class:"btn be-red white" %>
+    </div>
+<%end%>

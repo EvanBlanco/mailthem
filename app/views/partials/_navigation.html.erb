@@ -1,0 +1,27 @@
+<header>
+    <nav class="be-red white large-padding">
+        <ul class="no-list row center-xs middle-xs">
+            <ul class="col-md">
+                <h1 class="no-margin" id="logo"> <%= link_to "Mailthem", root_path %> </h1>
+            </ul>
+            <ul class="col-md">
+                <%= link_to "View Emails", emails_path %>
+            </ul>
+            <ul class="col-md">
+                <%= link_to "New Email", new_email_path %>
+            </ul>
+            <ul class="col-md">
+                Send Emails
+            </ul>
+            <% if user_signed_in? %>
+                <ul class="col-md">
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                </ul>
+            <%else%>
+                <ul class="col-md">
+                    <%= link_to "Iniciar Sesión", new_user_session_path %>
+                </ul>
+            <%end%>
+        </ul>
+    </nav>
+    </header>
